@@ -10083,7 +10083,7 @@ ion-view.deflash-blue:before, ion-view#view-amount:before, ion-view#view-confirm
 .onboarding .button.button-white.button-standard,
 .onboarding .button.button-green.button-standard,
 .onboarding .button.button-assertive.button-standard, #shapeshift .button-shapeshift {
-  width: 85%;
+  width: 90%;
   max-width: 300px;
   margin-left: auto;
   margin-right: auto;
@@ -10195,6 +10195,7 @@ ion-view.deflash-blue:before, ion-view#view-amount:before, ion-view#view-confirm
 .button {
   border-radius: 6px; }
   .button.button-full {
+    border-radius: 0;
     display: block; }
   .button-green {
     border-color: #FFF;
@@ -10263,8 +10264,8 @@ ion-view.deflash-blue:before, ion-view#view-amount:before, ion-view#view-confirm
         color: #FFFFFF;
         text-decoration: none; }
       .button-white-outline.active, .button-white-outline.activated {
-        border-color: #FFF;
-        background-color: #FAFAFA; }
+        border-color: #FFFFFF;
+        background-color: #FFFFFF; }
       .button-white-outline.button-outline {
         border-color: #FFFFFF;
         background: transparent;
@@ -10632,7 +10633,7 @@ qrcode {
                 #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.long input, #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.long .unit, #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.long .primary-amount-display {
                   font-size: 2em; } }
             #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.very-long input, #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.very-long .unit, #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.very-long .primary-amount-display {
-              font-size: 0.9em; }
+              font-size: 1.2em; }
               @media (min-width: 375px) {
                 #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.very-long input, #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.very-long .unit, #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount.very-long .primary-amount-display {
                   font-size: 1.3em; } }
@@ -10659,7 +10660,8 @@ qrcode {
               line-height: 1em; }
             #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .primary-amount .primary-amount-display {
               margin-right: 5px;
-              word-break: break-all; }
+              word-break: break-all;
+              width: 100%; }
           #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .alternative-amount {
             color: #6F6F70; }
           #view-amount .scroll-content .send-amount .send-amount-tool .send-amount-tool-input .switch-currencies {
@@ -10680,30 +10682,33 @@ qrcode {
       justify-content: space-between;
       margin: 0 14px; }
       #view-amount .scroll-content .send-amount-extras .available-funds {
-        color: #6F6F70; }
+        color: #6F6F70;
+        text-align: left; }
+      #view-amount .scroll-content .send-amount-extras .change-currency {
+        text-align: right; }
       #view-amount .scroll-content .send-amount-extras .warning {
         color: #b7664d; }
-      #view-amount .scroll-content .send-amount-extras .extra,
-      #view-amount .scroll-content .send-amount-extras button.extra {
-        /*display: flex;*/
-        flex: 0 1 auto; }
-      #view-amount .scroll-content .send-amount-extras button.extra {
-        background: none;
-        border: none;
-        color: #000;
-        font-family: 'ProximaNova';
-        font-size: 14px;
-        line-height: normal;
-        min-height: auto;
-        min-width: auto;
-        padding: 0; }
-      #view-amount .scroll-content .send-amount-extras .button .icon:before {
-        font-size: 14px;
+      #view-amount .scroll-content .send-amount-extras .extra {
+        flex: 1;
         line-height: normal; }
-      #view-amount .scroll-content .send-amount-extras .button span {
-        display: flex;
-        align-items: center;
-        justify-content: center; }
+        #view-amount .scroll-content .send-amount-extras .extra .button {
+          background: none;
+          border: none;
+          border-radius: 0;
+          color: #000;
+          font-family: 'ProximaNova';
+          font-size: 14px;
+          line-height: normal;
+          min-height: auto;
+          min-width: auto;
+          padding: 0; }
+        #view-amount .scroll-content .send-amount-extras .extra .button .icon:before {
+          font-size: 14px;
+          line-height: normal; }
+        #view-amount .scroll-content .send-amount-extras .extra .button span {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
     #view-amount .scroll-content .button.no-margin {
       margin: 0; }
     #view-amount .scroll-content .notification-warning {
@@ -10939,14 +10944,14 @@ qrcode {
   #tab-home .buttons .button {
     border: 2px solid;
     border-radius: 47px;
-    padding: 0 15px 0 15px;
+    padding: 8px 2px 8px 2px;
     text-align: center;
     width: 100%;
     max-width: 300px;
     font-size: 19px;
     font-weight: bolder;
-    min-height: auto;
-    line-height: 36px; }
+    min-height: 0;
+    line-height: 19px; }
 
 #tab-home .wallet-coin-logo {
   vertical-align: middle;
@@ -11013,6 +11018,10 @@ qrcode {
   #tab-home .release .title {
     font-weight: 700;
     color: #444; }
+  #tab-home .release .release-notes {
+    white-space: pre;
+    white-space: pre-line;
+    text-align: left; }
   #tab-home .release .button {
     width: 100%;
     border: none; }
@@ -11024,6 +11033,14 @@ qrcode {
 
 #tab-home .badge {
   top: 11px; }
+
+.popup-update .popup-buttons {
+  display: block; }
+
+.popup-update .popup-buttons .button {
+  display: block;
+  min-width: 100% !important;
+  margin-top: 4px; }
 
 #tab-receive .button-share {
   color: #fff;
@@ -11101,6 +11118,8 @@ qrcode {
 
 #tab-receive .payment-received-container {
   margin: 0 20px; }
+  #tab-receive .payment-received-container svg {
+    max-height: 400px; }
   #tab-receive .payment-received-container .payment-received-amount {
     font-size: 1.8em;
     display: block;
@@ -11207,7 +11226,7 @@ qrcode {
     margin: auto;
     margin-top: 18px; }
     #tab-send .send-wrapper .buttons .button {
-      height: 60px;
+      min-height: 65px;
       line-height: 16px;
       margin-right: 0px;
       width: 95%;
@@ -11284,7 +11303,9 @@ qrcode {
     margin-top: 18px; }
     #tab-send .sendTip .buttons .button {
       font-weight: bold;
-      font-size: 19px; }
+      font-size: 19px;
+      line-height: 26px;
+      padding: 8px 6px; }
   #tab-send .sendTip .button-first-contact img {
     height: 19px;
     width: 19px;
@@ -11920,6 +11941,13 @@ qrcode {
     #walletDetails .bp-content.status-bar {
       margin-top: 20px;
       margin-top: env(safe-area-inset-top); }
+    #walletDetails .bp-content.collapse ion-content {
+      margin-top: 40px; }
+    #walletDetails .bp-content.collapse .amount__scale, #walletDetails .bp-content.collapse .amount__error {
+      -webkit-transform: scale3d(0.5, 0.5, 0.5) translateY(0px);
+      transform: scale3d(0.5, 0.5, 0.5) translateY(0px); }
+    #walletDetails .bp-content.collapse .amount-alternative, #walletDetails .bp-content.collapse .send-receive-buttons, #walletDetails .bp-content.collapse .wallet-details-wallet-info {
+      opacity: 0; }
   #walletDetails .bar-header {
     border: 0;
     background: #eeb640; }
@@ -11932,9 +11960,12 @@ qrcode {
   #walletDetails ion-content {
     padding-top: 0;
     top: 0;
+    transition: all 0.25s ease-in-out;
+    margin-top: 185px;
     margin-bottom: 16px; }
-    #walletDetails ion-content.collapsible {
-      margin-top: 230px; }
+    @media only screen and (max-height: 500px) {
+      #walletDetails ion-content {
+        margin-top: 165px; } }
     #walletDetails ion-content .scroll {
       background: #f8f8f9;
       min-height: 300px; }
@@ -11965,38 +11996,45 @@ qrcode {
       justify-content: space-evenly;
       width: 100%;
       position: absolute;
-      bottom: 20px; }
+      bottom: 20px;
+      transition: all 0.25s ease-in-out; }
       #walletDetails .amount-wrapper .send-receive-buttons > .col {
         padding: 5px 10px;
         margin-bottom: 0; }
       #walletDetails .amount-wrapper .send-receive-buttons .button {
         border: 2px solid;
         border-radius: 47px;
-        padding: 0 15px 0 15px;
+        padding: 6px 2px 6px 2px;
         text-align: center;
         width: 100%;
         max-width: 300px;
         font-size: 19px;
         font-weight: bolder;
-        min-height: auto;
-        line-height: 36px; }
+        min-height: 0;
+        line-height: 19px; }
   #walletDetails .amount {
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    height: 230px;
-    padding-top: 40px;
-    display: block;
     align-items: center;
-    justify-content: center; }
+    color: #fff;
+    display: block;
+    height: 230px;
+    justify-content: center;
+    padding-top: 40px;
+    text-align: center;
+    transition: all 0.25s ease-in-out;
+    width: 100%; }
+    @media only screen and (max-height: 500px) {
+      #walletDetails .amount {
+        height: 210px; } }
     #walletDetails .amount__balance {
       -webkit-transform: scale3d(1, 1, 1) translateY(45px);
-      transform: scale3d(1, 1, 1) translateY(45px); }
+      transform: scale3d(1, 1, 1) translateY(45px);
+      transition: all 0.25s ease-in-out; }
     #walletDetails .amount__updating {
       z-index: 999;
       margin-top: -2.1rem; }
     #walletDetails .amount-alternative {
-      line-height: 36px; }
+      line-height: 36px;
+      transition: all 0.25s ease-in-out; }
     #walletDetails .amount__button-balance {
       background-color: transparent;
       border: 1px solid rgba(255, 255, 255, 0.25);
@@ -12006,7 +12044,8 @@ qrcode {
         vertical-align: middle; }
     #walletDetails .amount__error {
       font-size: 14px;
-      padding: 35px 20px; }
+      padding: 35px 20px;
+      opacity: 1; }
   #walletDetails .no-alternative {
     padding-top: 45px; }
   #walletDetails .item.item-footer {
@@ -12071,7 +12110,9 @@ a.item {
   font-size: 0.9em; }
 
 .loading-wallet svg {
-  margin-top: 0; }
+  margin-top: 0;
+  width: 16px;
+  height: 16px; }
 
 #advanced-settings .list .item:before {
   display: block;
@@ -12125,7 +12166,9 @@ a.item {
     margin-top: 18px; }
     #shapeshift .empty-case .buttons .button {
       font-weight: bold;
-      font-size: 19px; }
+      font-size: 19px;
+      line-height: 26px;
+      padding: 8px 6px; }
   #shapeshift .empty-case .button-first-contact img {
     height: 19px;
     width: 19px;
@@ -13812,6 +13855,7 @@ click-to-accept {
   height: 92px;
   width: 100%; }
   click-to-accept .click-to-accept__button.button.button-primary.button-standard {
+    border-radius: 0;
     height: 100%;
     max-width: 9999px;
     width: 100%; }
@@ -13918,6 +13962,8 @@ slide-to-accept {
   height: 92px;
   width: 100%;
   background: #494949; }
+  slide-to-accept .slide .button {
+    border-radius: 0; }
   slide-to-accept .slide__listener {
     height: 100%;
     width: 100%;
@@ -15349,20 +15395,25 @@ log-options #check-bar .checkbox-icon {
 #cash-scan a {
   cursor: pointer; }
 
-#view-review {
-  background-color: #494949; }
-  #view-review slide-to-accept, #view-review slide-to-accept-success {
-    margin-bottom: constant(safe-area-inset-bottom);
-    /* iOS 11.0 */
-    margin-bottom: env(safe-area-inset-bottom);
-    /* iOS 11.2 */ }
-  #view-review .fee-summary {
-    position: absolute;
-    bottom: 92px; }
-  #view-review .shapeshift-banner, #view-review .bitpay-banner, #view-review .egifter-banner {
-    box-shadow: none; }
-  #view-review .warning {
-    color: #b7664d; }
+#view-review slide-to-accept, #view-review slide-to-accept-success {
+  margin-bottom: constant(safe-area-inset-bottom);
+  /* iOS 11.0 */
+  margin-bottom: env(safe-area-inset-bottom);
+  /* iOS 11.2 */ }
+
+#view-review .fee-summary {
+  bottom: 92px;
+  bottom: calc(92px + constant(safe-area-inset-bottom));
+  /* iOS 11.0 */
+  bottom: calc(92px + env(safe-area-inset-bottom));
+  /* iOS 11.2 */
+  position: absolute; }
+
+#view-review .shapeshift-banner, #view-review .bitpay-banner, #view-review .egifter-banner {
+  box-shadow: none; }
+
+#view-review .warning {
+  color: #b7664d; }
 
 .gravatar {
   border-radius: 3px;
@@ -15395,6 +15446,7 @@ log-options #check-bar .checkbox-icon {
     left: 13px;
     top: 50%;
     padding: 0;
+    -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%); }
 
 .item .item-content.item-content-compact {
@@ -15463,8 +15515,8 @@ ion-content.padded-bottom-cta-with-summary {
   overflow: hidden;
   text-overflow: ellipsis; }
   .address-frame.expanded {
-    white-space: pre-wrap;
-    word-break: break-all; }
+    white-space: normal;
+    text-overflow: clip; }
   .address-frame .prefix {
     color: #000000; }
   .address-frame .mid {
@@ -15507,13 +15559,13 @@ ion-content.padded-bottom-cta-with-summary {
       transform: scale(1, 1); }
 
 .fee-summary {
-  position: relative;
+  background-color: #F2F2F2;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 100%;
   padding: 5px 12px 15px;
-  box-sizing: border-box;
-  background-color: #F2F2F2; }
+  position: relative;
+  width: 100%; }
   .fee-summary:before {
     content: '';
     position: absolute;
@@ -15523,16 +15575,16 @@ ion-content.padded-bottom-cta-with-summary {
     height: 15px;
     background: linear-gradient(to bottom, rgba(242, 242, 242, 0) 0%, #f2f2f2 100%); }
   .fee-summary .amount {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     width: 100%; }
-    .fee-summary .amount .fee-fiat.positive {
-      color: #70955F; }
-    .fee-summary .amount .fee-fiat.negative {
-      color: #C24633; }
+    .fee-summary .amount .fee-fiat {
+      display: inline; }
+      .fee-summary .amount .fee-fiat.positive {
+        color: #70955F; }
+      .fee-summary .amount .fee-fiat.negative {
+        color: #C24633; }
     .fee-summary .amount .fee-crypto {
-      color: #A7A7A7; }
+      color: #A7A7A7;
+      float: right; }
 
 .formatted-amount {
   display: inline-block; }
@@ -15556,6 +15608,9 @@ ion-content.padded-bottom-cta-with-summary {
     font-size: 1em;
     margin-left: 5px;
     text-transform: uppercase; }
+
+.wallet-balance-directive {
+  display: inline-block; }
 
 /* This is for rules that don't yet have a home.
  * Our goal is to delete this file. Search the regex: /class=".*CLASS.*?"/

@@ -32,7 +32,7 @@ angular.module('copayApp.services').factory('feeService', function($log, $timeou
   root.getFeeRate = function(coin, network, feeLevel, cb) {
 
     if (feeLevel == 'custom') return cb();
-    if (feeLevel == 'free') return cb(null, 0);
+//    if (feeLevel == 'free') return cb(null, 0);
 
     network = network || 'livenet';
 

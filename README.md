@@ -1,3 +1,24 @@
+This is a fork of the Bitcoin.com wallet to add additional features.
+Features included:
+
+ - Zero fee transactions (only works for Bitcoin Cash). You will be asked for, if you want to send a transaction as zero fee on the confirmation page.
+
+ ## Zero fee transactions:
+ Because most network nodes on the Bitcoin Cash network don't relay zero fee txs, you will experience some strange issues, but don't worry: for me personally the Bitcoin.com pool has included all my zero fee transactions, but please beware that the receiver probably won't see your tx before it has been confirmed and please do also keep in mind, that the transactions coming after it won't confirm or be seen before the zero fee one has been confirmed.
+
+ If you do already have a Bitcoin.com wallet, you need to create a new one to use this feature or change the wallet URL to: https://bws.freepages.dk/bws/api
+
+ ## Disclaimer
+
+ Please beware this is my personal experimental project. You are more than welcome to play with it, but I don't take any responsibility of loss of funds due to errors in the code, so please make sure you made a backup before running this software.
+
+ ## Builds
+
+ You can build the software yourself using the instructions below or use prebuilt binaries which can be found here (currently Windows and Linux only): https://ipfs.io/ipfs/QmR1DaS3QsDS48SzAWKUWFfmtMfJc4tgMtkSk3JFmuzewe
+
+ 
+
+
 The Bitcoin.com wallet is a fork of the Copay Wallet (https://github.com/bitpay/copay).
 
 The Bitcoin.com wallet is a secure bitcoin wallet platform for both desktop and mobile devices. It uses [Bitcore Wallet Service](https://github.com/Bitcoin-com/bitcore-wallet-service) (our fork of the [Bitpay Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service)) (BWS) for peer synchronization and network interfacing.

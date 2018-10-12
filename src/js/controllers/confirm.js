@@ -517,7 +517,8 @@ angular.module('copayApp.controllers').controller('confirmController', function(
     if (!lodash.isEmpty(warningMsg))
       msg += '\n' + warningMsg;
 
-    popupService.showAlert(null, msg, function() {});
+   popupService.showAlert(null, msg, function() {});
+  
   };
 
   $scope.onWalletSelect = function(wallet) {

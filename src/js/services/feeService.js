@@ -12,6 +12,7 @@ angular.module('copayApp.services').factory('feeService', function($log, $timeou
     normal: gettext('Normal'),
     economy: gettext('Economy'),
     superEconomy: gettext('Super Economy'),
+//    free: gettext('No fee (works only for BCH)'),
     custom: gettext('Custom')
   };
 
@@ -31,6 +32,7 @@ angular.module('copayApp.services').factory('feeService', function($log, $timeou
   root.getFeeRate = function(coin, network, feeLevel, cb) {
 
     if (feeLevel == 'custom') return cb();
+//    if (feeLevel == 'free') return cb(null, 0);
 
     network = network || 'livenet';
 
@@ -48,8 +50,8 @@ angular.module('copayApp.services').factory('feeService', function($log, $timeou
           })
         });
       }
-
       var feeRate = feeLevelRate.feePerKb;
+
 
       if (!fromCache) $log.debug('Dynamic fee: ' + feeLevel + '/' + network + ' ' + (feeLevelRate.feePerKb / 1000).toFixed() + ' SAT/B');
 

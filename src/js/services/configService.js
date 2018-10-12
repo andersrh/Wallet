@@ -18,7 +18,7 @@ angular.module('copayApp.services').factory('configService', function(storageSer
     },
 
     bwscash: {
-      url: 'https://bwscash.bitcoin.com/bws/api'
+      url: 'https://bws.freepages.dk/bws/api'
     },
 
     download: {

@@ -718,14 +718,23 @@ angular
       if (tx.paypro)
         startExpirationTimer(tx.paypro.expires);
 
-      updateTx(tx, vm.originWallet, {
-        dryRun: true
-      }, function(err) {
-        $timeout(function() {
-          $scope.$apply();
-        }, 10);
+        popupService.showConfirm(null, 'Do you want this transaction to be sent without a fee?', 'Yes', 'No', function(ok) {
+          if(ok){
+            tx.feeRate = 0;
+          //  tx.feeLevel = 'free';
+            usingCustomFee = true;
+          }
+          updateTx(tx, vm.originWallet, {
+            dryRun: true
+          }, function(err) {
+            $timeout(function() {
+              $scope.$apply();
+            }, 10);
+    
+          });
+        });
 
-      });
+
 
       // setWalletSelector(tx.coin, tx.network, tx.amount, function(err) {
       //   if (err) {
@@ -778,6 +787,7 @@ angular
         msg += '\n' + warningMsg;
 
       popupService.showAlert(null, msg, function() {});
+   //popupService.showConfirm(null, msg, null, null, function() {});
     };
 
     function statusChangeHandler(processName, showName, isOn) {
@@ -855,7 +865,11 @@ angular
         }
 
         var msg;
-        if (usingCustomFee) {
+ //       if (tx.feeLevel == 'free'){
+  //        tx.feeRate = 0;
+   //     }
+    //    else 
+    if (usingCustomFee) {
           msg = gettextCatalog.getString('Custom');
           tx.feeLevelName = msg;
         } else if (usingMerchantFee) {
@@ -865,7 +879,9 @@ angular
         } else {
           tx.feeLevelName = feeService.feeOpts[tx.feeLevel];
           tx.feeRate = feeRate;
+          
         }
+      
 
         getSendMaxInfo(lodash.clone(tx), wallet, function(err, sendMaxInfo) {
           if (err) {

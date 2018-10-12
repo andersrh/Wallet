@@ -16,7 +16,7 @@ Features included:
 
  You can build the software yourself using the instructions below or use prebuilt binaries which can be found here (currently Windows and Linux only): https://ipfs.io/ipfs/QmR1DaS3QsDS48SzAWKUWFfmtMfJc4tgMtkSk3JFmuzewe
 
- 
+ ## 
 
 
 The Bitcoin.com wallet is a fork of the Copay Wallet (https://github.com/bitpay/copay).
